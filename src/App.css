@@ -1,0 +1,107 @@
+.scene_container {
+    width: 100%;
+    height: 100vh;
+    background-color: #141414;
+}
+
+.labels_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.labels_wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.label {
+    position: absolute;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* reserva turno */
+#TopLeftLabel {
+    left: 3%;
+    margin: 0 auto;
+    pointer-events: auto;
+    margin-top: auto;
+}
+
+/* salud total */
+#TopRightLabel {
+    top: 50px;
+    right: 40px;
+    pointer-events: auto;
+}
+
+#BottomLeftLabel {
+    right: 2%;
+    pointer-events: auto;
+    margin: 0px;
+    margin-top: auto;
+}
+
+#BottomRightLabel {
+    position: absolute;
+    pointer-events: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text_title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #8ff8ef;
+}
+
+.text_content {
+    font-size: 16px;
+    color: #8ff8ef;
+}
+
+.label_card--hidden {
+    opacity: 0;
+}
+
+@media (min-width: 768px) {
+
+    /* Estilos para dispositivos con un ancho mínimo de 768px (tabletas y computadoras) */
+    .label {
+        flex-basis: 45%;
+        /* Reducir el tamaño de los elementos en dispositivos más grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Estilos para dispositivos con un ancho máximo de 768px (dispositivos móviles) */
+
+    #BottomRightLabel {
+        position: absolute;
+        pointer-events: auto;
+        bottom: 0;
+
+        transform: translateX(-90%);
+    }
+
+    /* los dos costados*/
+    #TopLeftLabel {
+        display: none;
+    }
+
+    #BottomLeftLabel {
+        display: none;
+    }
+}
